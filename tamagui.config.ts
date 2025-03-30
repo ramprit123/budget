@@ -3,7 +3,14 @@ import { createInterFont } from '@tamagui/font-inter';
 import { createMedia } from '@tamagui/react-native-media-driver';
 import { shorthands } from '@tamagui/shorthands';
 import { themes, tokens } from '@tamagui/themes';
-import { createTamagui, styled, SizableText, H1, YStack, Button as ButtonTamagui } from 'tamagui';
+import {
+  createTamagui,
+  styled,
+  SizableText,
+  H1,
+  YStack,
+  Button as ButtonTamagui,
+} from 'tamagui';
 
 const animations = createAnimations({
   bouncy: {
@@ -51,7 +58,7 @@ export const Subtitle = styled(SizableText, {
 });
 
 export const Button = styled(ButtonTamagui, {
-  backgroundColor: '#6366F1',
+  backgroundColor: '#00D09E',
   borderRadius: 28,
   hoverStyle: {
     backgroundColor: '#5a5fcf',
