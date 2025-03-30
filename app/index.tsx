@@ -1,19 +1,62 @@
-import { Stack, Link } from 'expo-router';
+import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Image } from 'tamagui';
+import { Container, Title } from '~/tamagui.config';
 
-import { Button } from '~/components/Button';
-import { Container } from '~/components/Container';
-import { ScreenContent } from '~/components/ScreenContent';
+const Home = () => {
+  const router = useRouter();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/onboarding');
+    }, 3000);
 
-export default function Home() {
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <>
-      <Stack.Screen options={{ title: 'Home', headerShown: false }} />
-      <Container>
-        <ScreenContent path="app/index.tsx" title="Home" />
-        <Link href={{ pathname: '/details', params: { name: 'Dan' } }} asChild>
-          <Button title="Show Details" />
-        </Link>
+    <View style={styles.container}>
+      <Container
+        mt={20}
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Image
+          source={require('../assets/images/logo.png')}
+          height={109}
+          width={114}
+        />
+        <Title
+          size={'$9'}
+          mt={10}
+          ml={20}
+          fontWeight={600}
+          color={'white'}
+          style={{
+            textAlign: 'center',
+            marginVertical: 10,
+          }}
+        >
+          FinWise
+        </Title>
       </Container>
-    </>
+    </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#00D09E',
+  },
+  text: {
+    fontSize: 16,
+    color: '#000',
+  },
+});
+
+export default Home;
