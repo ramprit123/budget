@@ -25,10 +25,24 @@ export default function Layout() {
         screenOptions={{
           headerShown: false,
           animation: 'slide_from_right',
+          animationDuration: 200,
+          animationTypeForReplace: 'push',
+          gestureEnabled: true,
+          gestureDirection: 'horizontal',
         }}
       >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="onboarding" />
+        <Stack.Screen
+          name="index"
+          options={{
+            animation: 'fade_from_bottom',
+          }}
+        />
+        <Stack.Screen
+          name="onboarding"
+          options={{
+            animation: 'slide_from_right',
+          }}
+        />
       </Stack>
     </TamaguiProvider>
   );

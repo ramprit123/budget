@@ -14,7 +14,7 @@ const Onboarding = () => {
         style={{
           justifyContent: 'center',
           alignItems: 'center',
-          gap: 10,
+          gap: 20,
         }}
       >
         <Image
@@ -48,22 +48,25 @@ const Onboarding = () => {
           <Button
             fontWeight={600}
             color={'white'}
+            borderRadius={28}
             onPress={() => router.push('/sign-in')}
-            size="$3"
+            size="$4"
             style={{
               backgroundColor: COLORS.primary,
               width: 207,
               textAlign: 'center',
+              borderColor: COLORS.primary,
             }}
           >
             Log In
           </Button>
 
           <Button
+            borderRadius={28}
             onPress={() => router.push('/sign-up')}
-            size="$3"
             fontWeight={600}
             variant="outlined"
+            size="$4"
             style={{
               backgroundColor: '#DFF7E2',
               width: 207,
